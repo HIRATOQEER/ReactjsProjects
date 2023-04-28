@@ -1,0 +1,126 @@
+<div class="calculator">
+  <div class="display">
+    <input type="text" id="result" disabled>
+  </div>
+  <div class="buttons">
+    <div class="row">
+      <button id="button-7">7</button>
+      <button id="button-8">8</button>
+      <button id="button-9">9</button>
+      <button id="button-divide">/</button>
+    </div>
+    <div class="row">
+      <button id="button-4">4</button>
+      <button id="button-5">5</button>
+      <button id="button-6">6</button>
+      <button id="button-multiply">*</button>
+    </div>
+    <div class="row">
+      <button id="button-1">1</button>
+      <button id="button-2">2</button>
+      <button id="button-3">3</button>
+      <button id="button-subtract">-</button>
+    </div>
+    <div class="row">
+      <button id="button-0">0</button>
+      <button id="button-decimal">.</button>
+      <button id="button-add">+</button>
+      <button id="button-clear">C</button>
+    </div>
+    <div class="row">
+      <button id="button-equals">=</button>
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready(function () {
+  // Calculator logic
+  var num1 = "";
+  var num2 = "";
+  var operator = "";
+  var result = 0;
+
+  // Button click handlers
+  $("#button-0").click(function () {
+    appendNumber("0");
+  });
+
+  $("#button-1").click(function () {
+    appendNumber
+
+</script>
+<style>
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.display {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.display input {
+  width: 100%;
+  font-size: 24px;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f7f7f7;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+button:active {
+  background-color: #1e472f;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.operator {
+  background-color: #f44336;
+}
+
+button.clear {
+  background-color: #2196f3;
+}
+
+button.equals {
+  background-color: #ff9800;
+}
+
+
+</style>

@@ -1,51 +1,96 @@
-<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="en">
+    <style>
 
+.header {
+        padding: 10px;
+        text-align: left;
+        background: #0e0f0f;
+        color: white;
+        font-size: 20px;
+      }
+
+      .footer {
+        padding:60px;
+        text-align: left;
+        background: #0e0f0f;
+        color: white;
+        font-size: 20px;
+      }
+
+    </style>
+    
 <head>
-    <body class="bg-red-900">
-      <div class="flex justify-center items-center h-screen bg-slate-200">
-        <div id="form" class="block bg-slate-50 p-6 rounded-x1 shodow-md shadow-slate-300 w-200  bg-red-900 ">
-          <form action="">
-            <h2 class="text-blue-700 text-3x1 font-semibold my-4">Login Form</h2>
-             <div id ="fullName" class="flex flex-row">
-              <!---first name-->      
-             </div>
-              <div id ="firstName" class="w-1/2 mr-1">
-              <!---first name-->
-              <label for ="fname" class="text-sm">First Name</label><br>
-              <input type="text" name ="" id="fname" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600">
-             </div>
-              <div id ="lastName" class="w-1/2 mr-1">
-              <!---first name-->
-              <label for =lname" class="text-sm">Last Name</label><br>
-              <input type="text" name ="" id="lname" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600">
-             </div>
-                              <!---email-->
-             <label for =email" class="text-sm">Email</label><br>
-              <input type="text" name ="" id="email" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600">
-                   <!---email-->
-                   <br>
-              <label for =password" class="text-sm">PassWord</label><br>
-              <input type="text" name ="" id="password" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600">
-               <!---Confirm Password-->
-              <br>
-              <label for =Cpassword" class="text-sm">Confirm Password</label><br>
-              <input type="text" name ="" id="Cpassword" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600">
-               <br>
-               <div id="gender" class="text-sm mx-1">
-                <p class="mt-2">Gender</p>
-                
-                 <input type="radio" name="gender" id ="male" class="text-sm mx-1" checked> <label for="male"> Male</label>
-                  <input type="radio" name="gender" id ="female" class="text-sm mx-1" checked> <label for="female"> female</label>
-                   <input type="radio" name="gender" id ="other" class="text-sm mx-1" checked> <label for="others">others</label>
+    <div class="header">
+    <h3><b>Magnifier Settings</b></h3>
+</div>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br><br><br>
+    
+    <form action="/action_page.php">
+        <label for="fname"><b>Zoom Box Width</b></label>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
+        <input type="text" id="fname" name="fname" placeholder="auto"> <em>the width of the box</em>
+        <br><br>
+        <label for="lname"><b>Zoom Box Height</b></label>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
+        <input type="text" id="lname" name="lname" placeholder="auto"><em>the height of the box</em> 
+        <br><br>
+        
+        <label for="lname"><b>Image Size</b>Image Size</label>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <input type="text" id="lname" name="lname" placeholder="600" maxlength="4" size="4">x<input type="text" id="lname" name="lname" placeholder="600" maxlength="4" size="4">
+        <em>the size of the images used within the magnifier box</em> <br>
+        &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp 
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"><em>Do you want to hard copy the image?</em></label><br><br><br>
   
-  
-               </div>
-               <input type="submit" name ="" id="sighnUp" class="bg-blue text-blue-700 w-full h-10 cursor-pointer text-white rounded-md hover:bg-blue-600 hover:outline-outline-2 outline-blue-600 outline-offset-2 text-sm">
-               <p class="text-xs my-2">Already have an account?<a href="#" class="text-blue-600"> </a>Login</p>
-          </form>
-        </div>
-      </div>
-  
-  
-    </body>
-  </head>
+  <label for="cars"><b>Zoom box position </b>
+   </label>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp 
+  <select name="cars" id="cars">
+    <option value="volvo">Inside</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+  </select>    <em>the magnifier position for the mobile devices</em><br><br>
+
+  <label for="cars"><b>Zoom box position for mobile </b><br>
+    devices</label>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp  &nbsp 
+<select name="cars" id="cars">
+ <option value="volvo">Inside</option>
+ <option value="saab">Saab</option>
+ <option value="opel">Opel</option>
+ <option value="audi">Audi</option>
+</select><br><br>
+
+<label for="fname"><b>Loading lable </b></label>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp
+        <input type="text" id="fname" name="fname" placeholder="Loading..."><br><br>
+        
+        <label for="fname"><b>Lens Opacity</b></label>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp
+        <input id="pi_input" type="range" min="0" max="3.14" step="any" /><output id="value"></output><br><br><br>
+       
+        <script>
+            const value = document.querySelector("#value")
+            const input = document.querySelector("#pi_input")
+            value.textContent = input.value
+            input.addEventListener("input", (event) => {
+            value.textContent = event.target.value
+           })
+        </script>
+        <label for="fname"><b>Blur </b></label>
+  &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp&nbsp &nbsp
+ <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+ 
+<label for="vehicle1"><em>Add a blur effect to the small image on mouse hover</em></label><br><br><br>
+      </form>
+      <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+    </div>
+	<div class="footer">
+		Copyright ©-All rights are reserved
+	</div>
+</body>
+
+
+</html>

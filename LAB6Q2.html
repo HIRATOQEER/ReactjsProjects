@@ -1,0 +1,109 @@
+
+<!DOCTYPE html> <html> <head> <meta charset='utf-8'> <meta http-equiv='X-UA-Compatible' content='IE=edge'> <title>Random Users Generator</title> <meta name='vie
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>AJAX</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <style>
+            body{
+                height:100vh;
+                width: 100vw;
+                background-color: yellow;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .content{
+                background-color: #ffffff;
+                width: fit-content;
+                height: fit-content;
+            }
+            p{
+                margin-left:20px;
+                font-size: 22px;
+                font-style: italic;
+                color: green;
+            }
+            label{
+                margin-left:20px;
+                font-size: 22px;
+                font-style: bold;
+                color: pink;
+            }
+            .button{
+                background-color: #ffffff;
+                color:rgb(8, 8, 8);
+                font-size: 20px;
+                text-align: center;
+                border-radius: 12px;
+                height:fit-content;
+                width:fit-content;
+                padding: 20px;
+    
+            }
+        </style>
+    
+    </head>
+    
+    <body>
+        <div id="div1" class="content" >
+            <button class="button" >Show University Information</button>
+        </div>
+    </body>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+           $.ajax(
+            {
+                url: "http://universities.hipolabs.com/search?name=fast",
+                type: 'GET',
+                cache: false,
+                success: function(result) {
+                    
+                    if (result) {
+                
+                        
+                        txt1 = $("<p></p>").html("state-province :     " );  
+                        txt2 = $("<p></p>").html("domains        :     " );  
+                        txt3 = $("<p></p>").html("country        :     " ); 
+                        txt4 = $("<p></p>").html("web_pages      :     " ); 
+                        txt5 = $("<p></p>").html("name           :     " ); 
+                        txt6 = $("<p></p>").html("alpha_two_code :     " );
+                        
+                        v1 = $("<label></label>").html(result[0].state);
+                        // if(v1 == "")
+                        v1 = $("<label></label>").html("null");
+                        v2 = $("<label></label>").html("\""+result[0].domains+"\""); 
+                        v3 = $("<label></label>").html("\""+result[0].country+"\""); 
+                        v4 = $("<label></label>").html("\""+result[0].web_pages+"\""); 
+                        v5 = $("<label></label>").html("\""+result[0].name+"\""); 
+                        v6 = $("<label></label>").html("\""+result[0].alpha_two_code+"\""); 
+                        txt1.append(v1);
+                        txt2.append(v2);
+                        txt3.append(v3);
+                        txt4.append(v4);
+                        txt5.append(v5);
+                        txt6.append(v6);
+                    
+                        $("#div1").append(txt1 , txt2, txt3, txt4, txt5, txt6);
+                        
+                    }
+                    $(".button").hide();
+
+                },
+                error: function() {
+                    alert("Error occured ! :(");
+                }
+            });
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Random  Generator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+    
+
+
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <button class="button" >Click me to display content</button>
+    
+</body>
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            const randomColor3 = Math.floor(Math.random()*16777215).toString(16);
+            const randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+            const randomColor1 = Math.floor(Math.random()*16777215).toString(16);
+            
+            div1= $(".content").empty();
+            txt1 = $("<label></label>").html("Gender      :     " );  
+            txt2 = $("<label></label>").html("Name        :     " );  
+            txt3 = $("<label></label>").html("Age         :     " ); 
+            txt4 = $("<label></label>").html("City        :     " ); 
+            txt5 = $("<label></label>").html("State       :     " ); 
+            txt6 = $("<label></label>").html("Country     :     " );
+            txt7 = $("<label></label>").html("Postcode    :     " );  
+            txt8 = $("<label></label>").html("Coordinates :     " );  
+            txt9 = $("<label></label>").html("Timezone    :     " ); 
+            txt10 = $("<label></label>").html("Email      :     " ); 
+            txt11 = $("<label></label>").html("Login      :     " ); 
+            txt12 = $("<label></label>").html("DOB        :     " );
+            txt13 = $("<label></label>").html("Registered :     " );  
+            txt14 = $("<label></label>").html("Phone      :     " );  
+            txt15 = $("<label></label>").html("Cell       :     " ); 
+            txt16 = $("<label></label>").html("ID         :     " ); 
+            profileImg = $("<img6>").addClass("image"); 
+
+            $("button").before(div1);
+            div1.append(profileImg, txt1 , txt2, txt3, txt4, txt5, txt6, txt7 , txt8, txt9, txt10, txt11, txt12, txt13 , txt14, txt15, txt16);
+
+            $(".button").css("background-color", "#" + randomColor1);
+            $("label").css("background-color", "#" + randomColor1);
+            $(".content").css("background-color", "#" + randomColor2);
+            $("body").css("background-color", "#" + randomColor3);
+
+            $.ajax(
+            {
+                url: "https://randomuser.me/api/",
+                type: 'GET',
+                cache: false,
+                success: function(data) {
+                    
+                     if (data) {
+                        txt1.append(data.results[0].gender);
+                        txt2.append(data.results[0].name.title+" "+data.results[0].name.first+" " + data.results[0].name.last);
+                        txt3.append(data.results[0].dob.age +" (years)");
+                        txt4.append(data.results[0].location.city);
+                        txt5.append(data.results[0].location.state);
+                        txt6.append(data.results[0].location.country);
+                        txt7.append(data.results[0].location.postcode);
+                        txt8.append("Latitude: " + data.results[0].location.coordinates.latitude+ + ", Longitude : "+ data.results[0].location.coordinates.longitude);
+                        txt9.append(" Offset " + data.results[0].location.timezone.offset+ " , " + data.results[0].location.timezone.description);
+                        txt10.append(data.results[0].email);
+                        txt11.append("Username : "+data.results[0].login.username+ " , Password : " +data.results[0].login.password);
+                        txt12.append(data.results[0].dob.date);
+                        txt13.append(data.results[0].registered.date);
+                        txt14.append(data.results[0].phone);
+                        txt15.append(data.results[0].cell); 
+                        txt16.append("Name : "+data.results[0].id.name +" , Value : " +data.results[0].id.value); 
+                        profileImg.attr("src",data.results[0].picture.large);
+                    }
+                
+                },
+                error: function() {
+                    alert("Error occured ! :(");
+                }
+            });
+           
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+.star {
+  visibility: hidden;
+  transition: visibility cubic-bezier(.165, .84, .44, 1) .25s;
+}
+
+.fadeIn {
+  -webkit-animation: animat_show 0.8s;
+  animation: animat_show 0.8s;
+  visibility: visible !important;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>JQuery</title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>     
+    $(document).ready(function()
+        {
+
+            $("#b1").click(function() {
+            $("img").toggle();
+
+        });
+         
+        $("#my-button").click(function() {
+    alert("Hello! You clicked the button.");
+  });
+
+  $("#color-button").click(function() {
+    $("div#my-div").css("background-color", "red");
+  });
+  function showImages(el) {
+  var windowHeight = jQuery(window).height();
+  $(el).each(function() {
+    var thisPos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (topOfWindow + windowHeight - 200 > thisPos) {
+      $(this).addClass("fadeIn");
+    }else{
+      $(this).removeClass("fadeIn");
+    }
+  });
+}
+
+$(window).scroll(function() {
+  showImages('.star');
+});
+
+$("p").hover(function(){
+    $(this).css("background-color", "yellow");
+    }, function(){
+    $(this).css("background-color", "pink");
+  });
+
+   $(document).ready(function () {
+
+            $("#btnShow").click(function () {
+
+                $('#SampleModal').modal('show');
+
+            });
+
+        });
+      
+});
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+    <img  src="/home/hira/Downloads/i.png" alt="toggle element" width="500" height="600">
+    <button id ="b1"> toggle</button>
+    <button id ="my-button">Display</button>
+    <button id ="color-button">Change-Background</button>
+    <div id ="my-div">
+        
+    <h1>Change Back-ground colour</h1>
+    </div>
+    
+
+<img class="star" src="/home/hira/Downloads/i.png"/>
+
+<p>Hover the mouse pointer over this paragraph.</p>
+
+</body>
+</html>

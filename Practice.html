@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function toggle() {
+  const div = document.getElementById('my-div');
+  const currentWidth = div.style.width;
+  const currentHeight = div.style.height;
+  
+  if (currentWidth === '200px' && currentHeight === '200px') {
+    // If width and height are 200px, decrease them
+    div.style.width = '100px';
+    div.style.height = '100px';
+  } else {
+    // Otherwise, increase them back to 200px
+    div.style.width = '200px';
+    div.style.height = '200px';
+  }
+}
+
+    </script>
+</head>
+<body>
+
+<button onclick=" CalculateAge()">Toggle Size</button>
+<inputfield type="text" id ="input1"> 
+iput </inputfield>
+
+</body>
+</html>

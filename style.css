@@ -1,0 +1,67 @@
+.container{
+   display: grid;
+   display: inline-grid;
+   column-gap: 200px;
+   row-gap: 200px;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-areas:     "zero one two"
+                            "three four five"
+                            "six seven eight";
+                            
+   grid-template-rows: 0.4fr 0.4fr 0.4fr ;
+
+
+
+}
+.one{
+    grid-area: one;
+    background: black;
+
+}
+
+
+.two{
+    grid-area: two;
+    background-color: black;
+
+}
+
+.three{
+    grid-area: three;
+    background-color: black;
+
+}
+
+.four{
+    grid-area: four;
+    background-color: black;
+}
+
+.five{
+    grid-area: five;
+    background-color: black;
+
+}
+
+.six{
+    grid-area: six;
+    background-color: black;
+
+}
+
+.seven{
+    grid-area: seven;
+    background-color: black;
+
+}
+
+.eight{
+    grid-area: eight;
+     background-color: black;
+
+}
+
+.zero{
+    grid-area: zero;
+
+}

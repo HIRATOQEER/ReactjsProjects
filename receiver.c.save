@@ -1,0 +1,19 @@
+#include <unistd.h>
+#include<stdio.h>
+#include<fcnt1.h>
+int main() {
+int res,n;
+char buffer[100];
+res=open("fifo1",O_RDONLY);
+n=read(res,buffer,100);
+printf("Reader process having PID %d start\n",getpid());
+#include <unistd.h>
+#include<stdio.h>
+#include<fcnt1.h>
+int main() {
+int res,n;
+res=open("fifo1",O_WRONGLY);
+write(res,"message",7);
+printf("named pipe created\n");
+}
+}

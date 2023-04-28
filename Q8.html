@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+			Sort a list alphabetically
+		</title>
+		
+		<script src =
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+		</script>
+	</head>
+	
+	<body>
+		
+		
+		<ul class="mylist">
+			<li>a</li>
+			<li>c</li>
+			<li>b</li>
+			<li>B</li>
+		</ul>
+		<br>
+		
+		<center>
+			<button>
+				click here
+			</button>
+		</center>
+		
+		
+		
+		<script>
+			function sort(selector) {
+				$(selector).children("li").sort(function(a, b) {
+					var A = $(a).text().toUpperCase();
+					var B = $(b).text().toUpperCase();
+					return (A < B) ? -1 : (A > B) ? 1 : 0;
+				}).appendTo(selector);
+			}
+			
+			$('button').on('click', function() {
+				sort("ul.mylist");
+				$("#GFG_DOWN").text("sorted");
+			});				
+		</script>
+	</body>
+</html>					
